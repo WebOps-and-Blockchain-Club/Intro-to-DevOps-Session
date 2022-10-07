@@ -1,0 +1,14 @@
+name: PR greet
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JJ/pr-greeting-action@releases/v1
+        with: 
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          greeting: Thanks for creating PR
